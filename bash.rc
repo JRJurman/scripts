@@ -105,25 +105,8 @@ l_gray="\[\e[0;37m\]"
 
 
 #   Clean block prompt
-t="${BLUE}"
-PS1="${t}┌──[${green}\u@\h${t}][${blue}\W${t}]\n└──[${white}\$${t}]${white} "
-
-
-#prompt_command () {
-#        local rts=$?
-#        local w=$(echo "${PWD/#$HOME/~}" | sed 's/.*\/\(.*\/.*\/.*\)$/\1/') # pwd max depth 3
-#        # pwd max length L, prefix shortened pwd with m
-#        local L=30 m='<'
-#        [ ${#w} -gt $L ] && { local n=$((${#w} - $L + ${#m}))
-#                              local w="\[\033[0;32m\]${m}\[\033[0;37m\]${w:$n}\[\033[0m\]" ; } \
-#                         ||   local w="\[\033[0;37m\]${w}\[\033[0m\]"
-#        # different colors for different return status
-#        [ $rts -eq 0 ] && \
-#        local p="\[\033[1;30m\]>\[\033[0;32m\]>\[\033[1;32m\]>\[\033[m\]" || \
-#        local p="\[\033[1;30m\]>\[\033[0;31m\]>\[\033[1;31m\]>\[\033[m\]"
-#        PS1="${w} ${p} "
-#    }
-#    PROMPT_COMMAND=prompt_command
+t="${blue}"
+PS1="${t}┌──[${green}\u@\h${t}][${yellow}\W${t}]\n└──[${white}\$${t}]${white} "
 
 # If this is an xterm set the title to user@host:dir
 #case "$TERM" in
@@ -176,10 +159,6 @@ if ! shopt -oq posix; then
 fi
 
 echo -en "\e]P7ffffff"
-[ -n "$FBTERM"] && export TERM=fbterm
-alias fbterm_full="fbterm -v --vesa-mode=324"
-alias fbterm_med="fbterm -v --vesa-mode=276"
-alias fbterm_small="fbterm -v --vesa-mode=273"
 
 # path stuff
-export PATH=/home/jrjurman/.gem/ruby/1.9.1/bin:$PATH
+#export PATH=/cygdrive/c/Ruby193/lib/ruby/1.9.1/rubygems:$PATH
