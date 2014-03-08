@@ -19,6 +19,7 @@ set expandtab
 autocmd FileType markdown set nofoldenable
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile *.sj set filetype=javascript
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 "set nowrap         " don't wrap lines
 set ruler           " show the cursor position all the time
@@ -33,6 +34,12 @@ set showmode		    " Show the mode you are currently in
 set cc=80           " set color column at 80
 set wildmenu        " enable colon auto-complete
 filetype on         " Enable filetype detection
+
+"map shift-* to move 10 steps
+noremap J 10j
+noremap K 10k
+noremap H 10h
+noremap L 10l
 
 "set background=dark
 colorscheme Tomorrow-Night-Bright
