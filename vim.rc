@@ -14,7 +14,7 @@ filetype indent plugin on
 set tabstop=2
 set shiftwidth=2
 set expandtab
-"set bs=2        " odd cygwin backspace mapping
+"set bs=2           " odd cygwin backspace mapping
 
 autocmd FileType markdown set nofoldenable
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
@@ -40,6 +40,13 @@ noremap J 10j
 noremap K 10k
 noremap H 10h
 noremap L 10l
+
+"remap j and k to move through wrapped lines
+"noremap k gk
+"noremap j gj
+
+"remap 'a to tmux bindings
+"so ~/.tallyvim.vim
 
 "set background=dark
 colorscheme Tomorrow-Night-Bright
