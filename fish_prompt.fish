@@ -29,13 +29,13 @@ function fish_prompt
             if test -s (git status | grep -e "working directory clean") ^/dev/null
                 p_echo 'yellow'  "*"
             end
-            # print if there are changes to push
-            if not test -s (git log $vcgb..origin/$vcgb) ^/dev/null
-                p_echo 'red'     "*"
-            end
             # print if there are changes to pull
+            if not test -s (git log $vcgb..origin/$vcgb) ^/dev/null
+                p_echo 'cyan'     "*"
+            end
+            # print if there are changes to push
             if not test -s (git log origin/$vcgb..$vcgb) ^/dev/null
-                p_echo 'green'   "*"
+                p_echo 'red'   "*"
             end
     end
     p_echo $vspc     ']\n└──['
