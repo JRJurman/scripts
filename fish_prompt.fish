@@ -26,7 +26,7 @@ function fish_prompt
             # get and echo master branch
             p_echo $vsgc     $vcgb
             # print if there are changes to commit
-            if not test -s (git diff) ^/dev/null
+            if test -s (git status | grep -e "working directory clean") ^/dev/null
                 p_echo 'yellow'  "*"
             end
             # print if there are changes to push
