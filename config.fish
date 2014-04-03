@@ -9,5 +9,5 @@ set PATH $PATH /home/jrjurman/bin;
 # tell tmux that we have 256 colors
 set TERM xterm-256color
 
-# kick off tmux
+# kick off tmux 
 tmux
