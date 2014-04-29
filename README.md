@@ -1,4 +1,4 @@
 scripts
 =======
 
-my rc and script files
+my rc and script files, of all shapes and sizes!
