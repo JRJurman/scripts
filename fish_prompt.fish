@@ -10,16 +10,26 @@ set vswc 'magenta'
 set vsgc '65F15B'
 
 function fish_prompt
-  
     p_echo $vspc     '┌──['
     p_echo $vsmc     (hostname)
     p_echo $vspc     ']['
     p_echo $vswc     (prompt_pwd)
     switch (git rev-parse --is-inside-work-tree ^/dev/null; or echo false)
         case true
+            set git_dir (git rev-parse --git-dir)
             # begin-end statement to run and capture output of git-fetch
             begin
-                git fetch &
+                # if the lock doesn't exist create it, and run git-fetch
+                if test -s (ls $git_dir | grep fetch_lock) ^/dev/null
+                    touch -d '+4 minute' $git_dir/fetch_lock
+                    git fetch &
+                end
+                # create a temporary file to check the time against
+                touch $git_dir/fetch_temp
+                if test (stat --format="%Y" $git_dir/fetch_lock) -lt (stat --format="%Y" $git_dir/fetch_temp)
+                  rm $git_dir/fetch_lock
+                end
+                rm $git_dir/fetch_temp
             end ^/dev/null
             set vcgs (git status)
             set git_branch (echo $vcgs | head -n 1 | cut -d " " -f 3)
