@@ -34,6 +34,8 @@ set showmode		    " Show the mode you are currently in
 set cc=80           " set color column at 80
 set wildmenu        " enable colon auto-complete
 filetype on         " Enable filetype detection
+set hlsearch        " Highlight search results
+set incsearch       " Makes search act like search in modern browsers
 
 "map shift-* to move 10 steps
 noremap J 10j
@@ -44,9 +46,6 @@ noremap L 10l
 "remap j and k to move through wrapped lines
 "noremap k gk
 "noremap j gj
-
-"remap 'a to tmux bindings
-"so ~/.tallyvim.vim
 
 "set background=dark
 colorscheme Tomorrow-Night-Bright
