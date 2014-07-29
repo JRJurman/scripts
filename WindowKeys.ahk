@@ -9,7 +9,8 @@ return
 
 ; map 'a to send-prefix in cygwin
 $'::
-if WinActive("-bash")
+WinGet, pname, ProcessName, A
+if (pname="mintty.exe")
 {
   Input, user_in, L1 T0.3 I
   if user_in = a
