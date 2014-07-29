@@ -48,6 +48,7 @@ def gen_bar(amount, full, width,
 end
 
 # Grab top data for cpu processing
+# if mpstat isn't installed, try grabbing sysstat
 mp = `mpstat 1 1`
 idle_index = mp.split(?\n)[2].split(?\ ).index("%idle")
 idle_value = mp.split(?\n)[3].split(?\ )[idle_index]
