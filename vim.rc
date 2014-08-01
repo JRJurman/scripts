@@ -47,5 +47,8 @@ noremap L 10l
 "noremap k gk
 "noremap j gj
 
+"ctrlp options
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 "set background=dark
 colorscheme Tomorrow-Night-Bright
