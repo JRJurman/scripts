@@ -53,27 +53,29 @@ nnoremap <A-l> <C-w>l
 
 " resize vim windows easily
 " can't do <A-l> because of chromebook shortcuts
-tnoremap <A-H> :vertical resize +1<CR>
-tnoremap <A-J> :res +1<CR>
-tnoremap <A-K> :res -1<CR>
-tnoremap <A-:> :vertical resize -1<CR>
-tnoremap <A-Space> :ZoomWin<CR>
+tnoremap <A-H> <C-\><C-n>:vertical resize +1<CR>A
+tnoremap <A-J> <C-\><C-n>:res +1<CR>A
+tnoremap <A-K> <C-\><C-n>:res -1<CR>A
+tnoremap <A-:> <C-\><C-n>:vertical resize -1<CR>A
 nnoremap <A-H> :vertical resize +1<CR>
 nnoremap <A-J> :res +1<CR>
 nnoremap <A-K> :res -1<CR>
 nnoremap <A-:> :vertical resize -1<CR>
-nnoremap <A-Space> :ZoomWin<CR>
 
 " split windows using \ and -
 " one day I'll figure this out
 
 " tab navigation
 nnoremap <A-T> :tabnew +term<CR>
+nnoremap <A-N> :tabnew<CR>
 nnoremap <A-{> :tabprev<CR>
 nnoremap <A-}> :tabnext<CR>
 tnoremap <A-T> :tabnew +term<CR>
 tnoremap <A-{> :tabprev<CR>
 tnoremap <A-}> :tabnext<CR>
+
+" leave terminal to nvim
+tnoremap <Esc><Esc> <C-\><C-n>
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
