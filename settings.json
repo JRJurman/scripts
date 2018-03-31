@@ -1,0 +1,65 @@
+{
+  "editor.fontFamily": "Courier Prime Code, 'Courier New', monospace",
+
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.parameterHints": false,
+
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "line",
+
+  "editor.fontLigatures": false,
+  "editor.renderIndentGuides": true,
+  "editor.renderLineHighlight": "line",
+
+  "editor.dragAndDrop": false,
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "explorer.openEditors.visible": 0,
+
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 16,
+
+  "window.zoomLevel": 1,
+
+  "search.exclude": {
+      "**/coverage": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/dist": true
+  },
+
+  // "workbench.colorCustomizations" : {
+  //     "terminal.background": "#1E1E1E",
+  //     "terminal.foreground": "#BBBBBB",
+  //     "terminal.ansiBlack": "#000000",
+  //     "terminal.ansiBlue": "#5294CB",
+  //     "terminal.ansiBrightBlack": "#000000",
+  //     "terminal.ansiBrightBlue": "#9CDCFE",
+  //     "terminal.ansiBrightCyan": "#66CCCC",
+  //     "terminal.ansiBrightGreen": "#4EC9B0",
+  //     "terminal.ansiBrightMagenta": "#CC99CC",
+  //     "terminal.ansiBrightRed": "#CE9178",
+  //     "terminal.ansiBrightWhite": "#ffffff",
+  //     "terminal.ansiBrightYellow": "#FFCC66",
+  //     "terminal.ansiCyan": "#9CDCFE",
+  //     "terminal.ansiGreen": "#608B4E",
+  //     "terminal.ansiMagenta": "#CC99CC",
+  //     "terminal.ansiRed": "#F2777A",
+  //     "terminal.ansiWhite": "#CCCCCC",
+  //     "terminal.ansiYellow": "#FFCC66"
+  // },
+
+  "xo.enable": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.panel.location": "bottom",
+  "extensions.ignoreRecommendations": false,
+
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "workbench.colorTheme": "Ayu Dark"
+}
