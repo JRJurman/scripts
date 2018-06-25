@@ -162,3 +162,10 @@ echo -en "\e]P7ffffff"
 
 # path stuff
 #export PATH=/cygdrive/c/Ruby193/lib/ruby/1.9.1/rubygems:$PATH
+
+# add custom github command to open pr
+pr () {
+  REMOTE=$(git remote get-url origin);
+  BRANCH=$(git branch | grep \* | cut -d ' ' -f2-);
+  open ${REMOTE%.*}/compare/$BRANCH
+}
