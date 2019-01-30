@@ -163,6 +163,11 @@ echo -en "\e]P7ffffff"
 # path stuff
 #export PATH=/cygdrive/c/Ruby193/lib/ruby/1.9.1/rubygems:$PATH
 
+# Bash git prompt
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
 # add custom github command to open pr
 pr () {
   REMOTE_BRANCH=$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))
@@ -170,4 +175,17 @@ pr () {
   REMOTE_URL=$(git remote get-url $REMOTE_NAME);
   BRANCH=$(echo $REMOTE_BRANCH | cut -d '/' -f2);
   open ${REMOTE_URL%.*}/compare/$BRANCH
+}
+
+# get the last 14 days worth of PRs
+sprint () {
+  DATE=`date -v-7d +%Y-%m-%d`
+  USERNAME=`git config user.email | cut -d '@' -f1`
+  GIT_URL=`git remote get-url origin | cut -d '/' -f3`
+  open "https://"${GIT_URL}"/search?q=author%3A"${USERNAME}"+type%3Apr+merged%3A%3E"${DATE}"&type=Issues"
+}
+
+# kill process using port
+freeport () {
+  kill -9 $(lsof -t -i:$1)
 }
