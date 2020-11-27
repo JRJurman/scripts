@@ -1,0 +1,25 @@
+/* make dash-to-panel and dash-to-dock rounded */
+#panel, #dashtodockContainer.dashtodock.bottom #dash {
+	border-radius: 35px!important;
+}
+
+/* give panel padding so that it doesn't sit edge to edge */
+#panelBox {
+	padding:.5em 1em;
+}
+
+/* give dock padding so that it is rounded */
+#dashtodockContainer.dashtodock.bottom #dash {
+	padding: 0 20px;
+	margin: .5em;
+}
+
+/* make panel and dock semi-transparent */
+#panel, #dashtodockContainer.dashtodock.bottom #dash {
+	background: rgba(0, 0, 0, 0.507);
+}
+
+/* give panel and dock a slight solid border */
+#panel, #dashtodockContainer.dashtodock.bottom #dash {
+	border: solid 2px rgba(255, 255, 255, 0.507)
+}
